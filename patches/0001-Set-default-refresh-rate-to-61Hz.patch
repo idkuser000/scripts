@@ -1,0 +1,50 @@
+From 1df5fcf9d2d961e452c8735c3edca4171c6ba7a0 Mon Sep 17 00:00:00 2001
+From: Michael Goffioul <michael.goffioul@lincor.com>
+Date: Thu, 16 May 2024 20:31:53 -0400
+Subject: [PATCH] Set default refresh rate to 61Hz
+
+The default refresh rate is used as an upper bound for the display mode
+to select. However some monitors are using a frequency slightly larger
+than 60Hz, while also supporting a mode with the same resolution, but
+lower frequency (e.g. Dell Inspiron laptop). This makes Android to
+change the display mode, which triggers what looks like a bug in the
+kernel amdgpu driver, usually ending up in a kernel panic.
+
+This change is a work around, to prevent Android from attempting to
+change the refresh rate of the display (hence avoiding the kernel bug).
+
+Change-Id: I9664422ba78949b383a34d661084c3aef9684f80
+---
+ core/res/res/values/config.xml                                  | 2 +-
+ .../core/java/com/android/server/camera/CameraServiceProxy.java | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/frameworks/base/core/res/res/values/config.xml b/frameworks/base/core/res/res/values/config.xml
+index db005ec10fac..6c4720c919ad 100644
+--- a/frameworks/base/core/res/res/values/config.xml
++++ b/frameworks/base/core/res/res/values/config.xml
+@@ -5428,7 +5428,7 @@
+          If a non-zero value is set for config_defaultPeakRefreshRate, then
+          config_defaultRefreshRate may be set to 0, in which case the value set for
+          config_defaultPeakRefreshRate will act as the default frame rate. -->
+-    <integer name="config_defaultRefreshRate">60</integer>
++    <integer name="config_defaultRefreshRate">61</integer>
+ 
+     <!-- The default peak refresh rate for a given device. Change this value if you want to prevent
+          the framework from using higher refresh rates, even if display modes with higher refresh
+diff --git a/frameworks/base/services/core/java/com/android/server/camera/CameraServiceProxy.java b/frameworks/base/services/core/java/com/android/server/camera/CameraServiceProxy.java
+index 5a0d9cf58ea4..e17ba627d5f2 100644
+--- a/frameworks/base/services/core/java/com/android/server/camera/CameraServiceProxy.java
++++ b/frameworks/base/services/core/java/com/android/server/camera/CameraServiceProxy.java
+@@ -186,7 +186,7 @@ public class CameraServiceProxy extends SystemService
+     private static final int MAX_STREAM_STATISTICS = 5;
+ 
+     private static final float MIN_PREVIEW_FPS = 30.0f;
+-    private static final float MAX_PREVIEW_FPS = 60.0f;
++    private static final float MAX_PREVIEW_FPS = 61.0f;
+ 
+     private final Context mContext;
+     private final ServiceThread mHandlerThread;
+-- 
+2.55.0
+
