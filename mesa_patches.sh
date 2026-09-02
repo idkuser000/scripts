@@ -1,3 +1,5 @@
+#!/bin/bash
+
 cd external/mesa
 git fetch https://github.com/LineageOS/android_external_mesa refs/changes/55/480155/4 && git checkout FETCH_HEAD
 git fetch https://github.com/LineageOS/android_external_mesa refs/changes/43/489143/3 && git checkout FETCH_HEAD
