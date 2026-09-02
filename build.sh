@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Stuff
+# stuff
 rm -rf .repo/local_manifests
 rm -rf prebuilts/gcc
 export BUILD_USERNAME="cgik"
@@ -10,10 +10,10 @@ export TZ="Asia/Ho_Chi_Minh"
 # repo init
 repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth 1
 
-# Cloning local_manifests
+# cloning local_manifests
 git clone https://github.com/me-cafebabe-aosp-mainline/local_manifests --depth 1 -b lineage-24.0 .repo/local_manifests
 
-# Sync the rom
+# sync the rom
 /opt/crave/resync.sh
 
 # setting up the build environment
@@ -31,10 +31,10 @@ git clone https://android.googlesource.com/kernel/common -b android-mainline ker
 # mesa patches
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/mesa_patches.sh | bash
 
-# patch with files
-curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/patches.sh | bash
+# other patches
+curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/other_patches.sh | bash
 
-# patches can be picked up using repopick
+# patches that can be picked up using repopick
 lineage/scripts/repopick/repopick.py 496520
 lineage/scripts/repopick/repopick.py 442536
 lineage/scripts/repopick/repopick.py 471113
@@ -44,3 +44,13 @@ lineage/scripts/repopick/repopick.py 471111
 # build
 breakfast Generic_x86_64
 m liveisoimage
+
+# upload to pixeldrain
+echo "Upload to pixeldrain will be started..."
+if [ -f out/target/product/Generic_x86_64/*-live.iso ]; then
+    curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/pdup
+    chmod +x pdup ; ./pdup out/target/product/Generic_x86_64/*-live.iso
+    echo "Upload done!"
+else
+    echo "No such file found!" 
+fi
