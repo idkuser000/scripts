@@ -8,7 +8,7 @@ export BUILD_HOSTNAME="crave"
 export TZ="Asia/Ho_Chi_Minh"
 
 # repo init
-repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs
+repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth 1
 
 # Cloning local_manifests
 git clone https://github.com/me-cafebabe-aosp-mainline/local_manifests --depth 1 -b lineage-24.0 .repo/local_manifests
