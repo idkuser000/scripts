@@ -47,10 +47,6 @@ m liveisoimage
 
 # upload to pixeldrain
 echo "Upload to pixeldrain will be started..."
-if [ -f out/target/product/Generic_x86_64/*-live.iso ]; then
-    curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/pdup
-    chmod +x pdup ; ./pdup out/target/product/Generic_x86_64/*-live.iso
-    echo "Upload done!"
-else
-    echo "No such file found!" 
+curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/pdup
+chmod +x pdup ; ./pdup out/target/product/Generic_x86_64/*-live.iso
 fi
