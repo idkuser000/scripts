@@ -49,4 +49,3 @@ m liveisoimage
 echo "Upload to pixeldrain will be started..."
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/pdup
 chmod +x pdup ; ./pdup out/target/product/Generic_x86_64/*-live.iso
-fi
