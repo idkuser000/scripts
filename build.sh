@@ -37,9 +37,9 @@ curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/other_
 # patches that can be picked up using repopick
 lineage/scripts/repopick/repopick.py 496520
 lineage/scripts/repopick/repopick.py 442536
-lineage/scripts/repopick/repopick.py 471113
-lineage/scripts/repopick/repopick.py 471112
 lineage/scripts/repopick/repopick.py 471111
+lineage/scripts/repopick/repopick.py 471112
+lineage/scripts/repopick/repopick.py 471113
 
 # build
 breakfast Generic_x86_64
