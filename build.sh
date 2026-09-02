@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Stuff
+rm -rf .repo/local_manifests
+export BUILD_USERNAME=cgik
+export BUILD_HOSTNAME=crave
+
+# Set timezone
+sudo rm -rf /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+
+# repo init
+repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs
+
+# Cloning local_manifests
+git clone https://github.com/me-cafebabe-aosp-mainline/local_manifests --depth 1 -b lineage-24.0 .repo/local_manifests
+
+# Sync the rom
+/opt/crave/resync.sh
+
+# setting up the build environment
+source build/envsetup.sh
+
+# cloning device tree & dependencies inside lineageos org
+curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/lineage.dependencies -o device/mainline/Generic_x86_64/lineage.dependencies
+lineage/scripts/repopick/repopick.py 492595
+vendor/lineage/build/tools/roomservice.py generic true device/mainline/Generic_x86_64
+
+# cloning dependencies outside lineageos org
+git clone https://salsa.debian.org/kernel-team/linux -b debian/latest external/debian-linux
+git clone https://android.googlesource.com/kernel/common -b android-mainline kernel/mainline/android-mainline
+
+# mesa patches
+curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/mesa_patches.sh | bash
+
+# patch with files
+curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/patches.sh | bash
+
+# patches can be picked up using repopick
+lineage/scripts/repopick/repopick.py 496520
+lineage/scripts/repopick/repopick.py 442536
+lineage/scripts/repopick/repopick.py 471113
+lineage/scripts/repopick/repopick.py 471112
+lineage/scripts/repopick/repopick.py 471111
+
+# build
+breakfast Generic_x86_64
+m liveisoimage
