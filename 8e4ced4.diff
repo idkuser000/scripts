@@ -1,0 +1,26 @@
+From 8e4ced49c19f730674a5d5f52b9e4d795de69f13 Mon Sep 17 00:00:00 2001
+From: Yumi Yukimura <me.cafebabe@gmail.com>
+Date: Thu, 13 Aug 2026 21:57:24 +0800
+Subject: [PATCH] Revert "drm/virtio: Don't create a context with default param if context_init is supported"
+
+* It makes the cursor invisible for our setup
+
+This reverts commit 086b9f27f0ab38df05b2d839a69c8daead8019ae.
+
+Change-Id: Idf746d89af20810a9d40531d2493ba1c58f37258
+---
+
+diff --git a/kernel/mainline/android-mainline/drivers/gpu/drm/virtio/virtgpu_gem.c b/kernel/mainline/android-mainline/drivers/gpu/drm/virtio/virtgpu_gem.c
+index 3888aaa..1412d26 100644
+--- a/kernel/mainline/android-mainline/drivers/gpu/drm/virtio/virtgpu_gem.c
++++ b/kernel/mainline/android-mainline/drivers/gpu/drm/virtio/virtgpu_gem.c
+@@ -113,8 +113,7 @@ int virtio_gpu_gem_object_open(struct drm_gem_object *obj,
+ 	/* the context might still be missing when the first ioctl is
+ 	 * DRM_IOCTL_MODE_CREATE_DUMB or DRM_IOCTL_PRIME_FD_TO_HANDLE
+ 	 */
+-	if (!vgdev->has_context_init)
+-		virtio_gpu_create_context(obj->dev, file);
++	virtio_gpu_create_context(obj->dev, file);
+ 
+ 	if (vfpriv->context_created) {
+ 		objs = virtio_gpu_array_alloc(1);

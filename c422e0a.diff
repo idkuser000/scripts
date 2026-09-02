@@ -1,0 +1,23 @@
+From c422e0a77ac5181be67004642487c03836949397 Mon Sep 17 00:00:00 2001
+From: hmtheboy154 <buingoc67@gmail.com>
+Date: Sat, 23 Nov 2024 07:41:16 -0500
+Subject: [PATCH] drm/vmwgfx: add ABGR8888 to vmw_primary_plane_formats[]
+
+Based on FydeOS kernel patch
+
+Change-Id: If740facd93cd7a715cca2cc98b761b6764bbeaa9
+Signed-off-by: hmtheboy154 <buingoc67@gmail.com>
+---
+
+diff --git a/kernel/mainline/android-mainline/drivers/gpu/drm/vmwgfx/vmwgfx_kms.h b/kernel/mainline/android-mainline/drivers/gpu/drm/vmwgfx/vmwgfx_kms.h
+index 2a6c6d6..c638d6b 100644
+--- a/kernel/mainline/android-mainline/drivers/gpu/drm/vmwgfx/vmwgfx_kms.h
++++ b/kernel/mainline/android-mainline/drivers/gpu/drm/vmwgfx/vmwgfx_kms.h
+@@ -233,6 +233,7 @@ static const uint32_t __maybe_unused vmw_primary_plane_formats[] = {
+ 	DRM_FORMAT_ARGB8888,
+ 	DRM_FORMAT_RGB565,
+ 	DRM_FORMAT_XRGB1555,
++	DRM_FORMAT_ABGR8888,
+ };
+ 
+ static const uint32_t __maybe_unused vmw_cursor_plane_formats[] = {
