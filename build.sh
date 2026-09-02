@@ -2,12 +2,10 @@
 
 # Stuff
 rm -rf .repo/local_manifests
-export BUILD_USERNAME=cgik
-export BUILD_HOSTNAME=crave
-
-# Set timezone
-sudo rm -rf /etc/localtime
-sudo ln -s /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+rm -rf prebuilts/gcc
+export BUILD_USERNAME="cgik"
+export BUILD_HOSTNAME="crave"
+export TZ="Asia/Ho_Chi_Minh"
 
 # repo init
 repo init --depth=1 -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs
