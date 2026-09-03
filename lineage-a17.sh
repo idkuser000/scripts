@@ -27,11 +27,11 @@ curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/script
 
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/other_patches.sh | bash
 
-lineage/scripts/repopick/repopick.py 496520
-lineage/scripts/repopick/repopick.py 442536
-lineage/scripts/repopick/repopick.py 471111
-lineage/scripts/repopick/repopick.py 471112
-lineage/scripts/repopick/repopick.py 471113
+lineage/scripts/repopick/repopick.py 496520 -f
+lineage/scripts/repopick/repopick.py 442536 -f
+lineage/scripts/repopick/repopick.py 471111 -f
+lineage/scripts/repopick/repopick.py 471112 -f
+lineage/scripts/repopick/repopick.py 471113 -f
 
 # build
 breakfast Generic_x86_64
