@@ -36,13 +36,13 @@ lineage/scripts/repopick/repopick.py 471113 -f
 # build
 rm -rf external/mainline-hw-deps
 breakfast Generic_x86_64
-m liveisoimage
+m systemimage
 
 # Upload files to gofile
 echo "Upload to gofile will be started..."
-if [ -f out/target/product/Generic_x86_64/*.iso ]; then
+if [ -f out/target/product/Generic_x86_64/*.img ]; then
     wget https://raw.githubusercontent.com/lordgaruda/GoFile-Upload/refs/heads/master/upload.sh
-    chmod +x upload.sh ; ./upload.sh out/target/product/earth/*.iso
+    chmod +x upload.sh ; ./upload.sh out/target/product/earth/*.img
     echo "Upload done!"
 else
     echo "No zip found in out/ dir!" 
