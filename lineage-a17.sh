@@ -3,7 +3,7 @@
 rm -rf .repo/local_manifests
 rm -rf prebuilts/gcc
 
-# syncing
+# init & syncing
 repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth=1
 git clone https://github.com/me-cafebabe-aosp-mainline/local_manifests --depth=1 -b lineage-24.0 .repo/local_manifests
 /opt/crave/resync.sh
@@ -33,8 +33,9 @@ lineage/scripts/repopick/repopick.py 471111 -f
 lineage/scripts/repopick/repopick.py 471112 -f
 lineage/scripts/repopick/repopick.py 471113 -f
 
-# build
 rm -rf external/mainline-hw-deps
+
+# build
 breakfast Generic_x86_64
 m systemimage vendorimage
 
