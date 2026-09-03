@@ -28,10 +28,10 @@ git clone https://salsa.debian.org/kernel-team/linux -b debian/latest external/d
 git clone https://android.googlesource.com/kernel/common -b android-mainline kernel/mainline/android-mainline
 
 # mesa patches
-curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/mesa_patches.sh | bash
+curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/mesa_patches.sh | bash
 
 # other patches
-curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/other_patches.sh | bash
+curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/other_patches.sh | bash
 
 # patches that can be picked up using repopick
 lineage/scripts/repopick/repopick.py 496520
@@ -46,6 +46,6 @@ m liveisoimage
 
 # upload to pixeldrain
 echo "Upload to pixeldrain will be started..."
-wget https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/pdup
+wget https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/pdup
 chmod +x pdup ; sudo cp pdup /usr/local/bin
 pdup out/target/product/Generic_x86_64/*-live.iso
