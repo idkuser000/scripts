@@ -16,7 +16,7 @@ export TZ="Asia/Ho_Chi_Minh"
 
 # clone dependencies
 rm -rf device/mainline/generic ; git clone https://github.com/idkuser000/android_device_mainline_generic --depth=1 -b lineage-24.0 device/mainline/generic
-lineage/scripts/repopick/repopick.py 492595
+lineage/scripts/repopick/repopick.py 492595 -f
 vendor/lineage/build/tools/roomservice.py generic true device/mainline/Generic_x86_64
 
 git clone https://salsa.debian.org/kernel-team/linux --depth=1 -b debian/latest external/debian-linux
