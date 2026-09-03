@@ -20,7 +20,7 @@ git clone https://github.com/me-cafebabe-aosp-mainline/local_manifests --depth 1
 source build/envsetup.sh
 
 # cloning device tree & dependencies inside lineageos org
-curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/lineage.dependencies -o device/mainline/Generic_x86_64/lineage.dependencies
+rm -rf device/mainline/generic ; git clone https://github.com/idkuser000/android_device_mainline_generic --depth 1 -b lineage-24.0 device/mainline/generic
 lineage/scripts/repopick/repopick.py 492595
 vendor/lineage/build/tools/roomservice.py generic true device/mainline/Generic_x86_64
 
@@ -47,5 +47,6 @@ m liveisoimage
 
 # upload to pixeldrain
 echo "Upload to pixeldrain will be started..."
-curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/pdup
-chmod +x pdup ; ./pdup out/target/product/Generic_x86_64/*-live.iso
+wget https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/pdup
+chmod +x pdup ; sudo cp pdup /usr/local/bin
+pdup out/target/product/Generic_x86_64/*-live.iso
