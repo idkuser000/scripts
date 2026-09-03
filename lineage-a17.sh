@@ -4,10 +4,10 @@ rm -rf .repo/local_manifests
 rm -rf prebuilts/gcc
 
 # repo init
-repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth 1
+repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth=1
 
 # cloning local_manifests
-git clone https://github.com/me-cafebabe-aosp-mainline/local_manifests --depth 1 -b lineage-24.0 .repo/local_manifests
+git clone https://github.com/me-cafebabe-aosp-mainline/local_manifests --depth=1 -b lineage-24.0 .repo/local_manifests
 
 # sync the rom
 /opt/crave/resync.sh
@@ -19,7 +19,7 @@ export BUILD_HOSTNAME="crave"
 export TZ="Asia/Ho_Chi_Minh"
 
 # cloning device tree & dependencies inside lineageos org
-rm -rf device/mainline/generic ; git clone https://github.com/idkuser000/android_device_mainline_generic --depth 1 -b lineage-24.0 device/mainline/generic
+rm -rf device/mainline/generic ; git clone https://github.com/idkuser000/android_device_mainline_generic --depth=1 -b lineage-24.0 device/mainline/generic
 lineage/scripts/repopick/repopick.py 492595
 vendor/lineage/build/tools/roomservice.py generic true device/mainline/Generic_x86_64
 
