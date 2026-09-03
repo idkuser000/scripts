@@ -44,8 +44,13 @@ lineage/scripts/repopick/repopick.py 471113
 breakfast Generic_x86_64
 m liveisoimage
 
-# upload to pixeldrain
-echo "Upload to pixeldrain will be started..."
-wget https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/pdup
-chmod +x pdup ; sudo cp pdup /usr/local/bin
-pdup out/target/product/Generic_x86_64/*-live.iso
+# Upload files to gofile
+echo "Upload to gofile will be started..."
+if [ -f out/target/product/Generic_x86_64/*.iso ]; then
+    wget https://raw.githubusercontent.com/lordgaruda/GoFile-Upload/refs/heads/master/upload.sh
+    chmod +x upload.sh ; ./upload.sh out/target/product/earth/*.iso
+    echo "Upload done!"
+else
+    echo "No zip found in out/ dir!" 
+    exit 1
+fi
