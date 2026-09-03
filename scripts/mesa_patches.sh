@@ -21,4 +21,5 @@ git fetch https://github.com/LineageOS/android_external_mesa refs/changes/39/480
 git fetch https://github.com/LineageOS/android_external_mesa refs/changes/40/480140/2 && git checkout FETCH_HEAD
 git fetch https://github.com/LineageOS/android_external_mesa refs/changes/41/480141/2 && git checkout FETCH_HEAD
 git fetch https://github.com/LineageOS/android_external_mesa refs/changes/42/480142/2 && git checkout FETCH_HEAD
+git fetch https://github.com/LineageOS/android_external_mesa refs/changes/36/500636/1 && git checkout FETCH_HEAD
 cd ../..
