@@ -34,6 +34,7 @@ lineage/scripts/repopick/repopick.py 471112 -f
 lineage/scripts/repopick/repopick.py 471113 -f
 
 # build
+rm -rf external/mainline-hw-deps
 breakfast Generic_x86_64
 m liveisoimage
 
