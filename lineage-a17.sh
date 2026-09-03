@@ -1,11 +1,7 @@
 #!/bin/bash
 
-# stuff
 rm -rf .repo/local_manifests
 rm -rf prebuilts/gcc
-export BUILD_USERNAME="cgik"
-export BUILD_HOSTNAME="crave"
-export TZ="Asia/Ho_Chi_Minh"
 
 # repo init
 repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth 1
@@ -18,6 +14,9 @@ git clone https://github.com/me-cafebabe-aosp-mainline/local_manifests --depth 1
 
 # setting up the build environment
 source build/envsetup.sh
+export BUILD_USERNAME="cgik"
+export BUILD_HOSTNAME="crave"
+export TZ="Asia/Ho_Chi_Minh"
 
 # cloning device tree & dependencies inside lineageos org
 rm -rf device/mainline/generic ; git clone https://github.com/idkuser000/android_device_mainline_generic --depth 1 -b lineage-24.0 device/mainline/generic
