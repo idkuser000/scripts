@@ -24,8 +24,8 @@ lineage/scripts/repopick/repopick.py 492595
 vendor/lineage/build/tools/roomservice.py generic true device/mainline/Generic_x86_64
 
 # cloning dependencies outside lineageos org
-git clone https://salsa.debian.org/kernel-team/linux -b debian/latest external/debian-linux
-git clone https://android.googlesource.com/kernel/common -b android-mainline kernel/mainline/android-mainline
+git clone https://salsa.debian.org/kernel-team/linux --depth=1 -b debian/latest external/debian-linux
+git clone https://android.googlesource.com/kernel/common --depth=1 -b android-mainline kernel/mainline/android-mainline
 
 # mesa patches
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/mesa_patches.sh | bash
