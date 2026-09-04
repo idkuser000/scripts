@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Scripts for building LineageOS 24 for Generic_x86_64
+
 rm -rf .repo/local_manifests
 rm -rf prebuilts/gcc
 
