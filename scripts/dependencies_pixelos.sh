@@ -14,3 +14,5 @@ git clone https://github.com/LineageOS/android_prebuilts_mesa-build-dep --depth 
 git clone https://github.com/idkuser000/android_device_mainline_generic --depth 1 -b seventeen device/mainline/generic
 git clone https://github.com/LineageOS/android_external_tinyhal --depth 1 -b lineage-24.0 external/tinyhal
 git clone https://github.com/LineageOS/android_vendor_mainline --depth 1 -b lineage-24.0 vendor/mainline
+git clone https://github.com/me-cafebabe-aosp-mainline/android_external_alsa-lib --depth=1 -b lineage-24.0 external/alsa-lib
+git clone https://github.com/me-cafebabe-aosp-mainline/android_external_alsa-ucm-conf --depth=1 -b lineage-24.0 external/alsa-ucm-conf
