@@ -8,6 +8,7 @@ rm -rf frameworks/base
 rm -rf system/memory/libmeminfo
 rm -rf external/debian-linux
 rm -rf kernel/mainline/android-mainline
+rm -rf system/core
 rm -rf device/mainline/generic
 
 # init & syncing
@@ -32,7 +33,6 @@ curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/script
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/other_patches.sh | bash
 
 custom/scripts/repopick/repopick.py 496520 -f
-custom/scripts/repopick/repopick.py 442536 -f
 custom/scripts/repopick/repopick.py 471111 -f
 custom/scripts/repopick/repopick.py 471112 -f
 custom/scripts/repopick/repopick.py 471113 -f
