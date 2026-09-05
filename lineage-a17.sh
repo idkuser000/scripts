@@ -4,6 +4,10 @@
 
 rm -rf .repo/local_manifests
 rm -rf prebuilts/gcc
+rm -rf frameworks/base
+rm -rf system/memory/libmeminfo
+rm -rf external/debian-linux
+rm -rf kernel/mainline/android-mainline
 
 # init & syncing
 repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth=1
