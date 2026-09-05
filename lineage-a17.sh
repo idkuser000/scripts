@@ -8,6 +8,7 @@ rm -rf frameworks/base
 rm -rf system/memory/libmeminfo
 rm -rf external/debian-linux
 rm -rf kernel/mainline/android-mainline
+rm -rf device/mainline/generic
 
 # init & syncing
 repo init -u https://github.com/LineageOS/android.git -b lineage-24.0 --git-lfs --depth=1
@@ -22,6 +23,10 @@ export TZ="Asia/Ho_Chi_Minh"
 
 # clone dependencies
 rm -rf device/mainline/generic ; git clone https://github.com/idkuser000/android_device_mainline_generic --depth=1 -b lineage-24.0 device/mainline/generic
+
+git clone https://github.com/me-cafebabe-aosp-mainline/android_external_alsa-lib --depth=1 -b lineage-24.0 external/alsa-lib
+git clone https://github.com/me-cafebabe-aosp-mainline/android_external_alsa-ucm-conf --depth=1 -b lineage-24.0 external/alsa-ucm-conf
+
 lineage/scripts/repopick/repopick.py 492595 -f
 vendor/lineage/build/tools/roomservice.py generic true device/mainline/Generic_x86_64
 
