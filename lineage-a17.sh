@@ -24,7 +24,7 @@ export TZ="Asia/Ho_Chi_Minh"
 # clone dependencies
 rm -rf device/mainline/generic ; git clone https://github.com/idkuser000/android_device_mainline_generic --depth=1 -b lineage-24.0 device/mainline/generic
 
-lineage/scripts/repopick/repopick.py 492595 -f
+lineage/scripts/repopick/repopick.py 496352 -f
 vendor/lineage/build/tools/roomservice.py generic true device/mainline/Generic_x86_64
 
 git clone https://salsa.debian.org/kernel-team/linux --depth=1 -b debian/latest external/debian-linux
@@ -37,12 +37,15 @@ curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/script
 
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/other_patches.sh | bash
 
-lineage/scripts/repopick/repopick.py 496520 -f
-lineage/scripts/repopick/repopick.py 471111 -f
-lineage/scripts/repopick/repopick.py 471112 -f
-lineage/scripts/repopick/repopick.py 471113 -f
+lineage/scripts/repopick/repopick.py -t c2-rgb
+lineage/scripts/repopick/repopick.py -t lineage-light-disable-backlight
+lineage/scripts/repopick/repopick.py -t mainline-kernel
 lineage/scripts/repopick/repopick.py 501163 -f
+lineage/scripts/repopick/repopick.py 496520 -f
 lineage/scripts/repopick/repopick.py 501351 -f
+lineage/scripts/repopick/repopick.py 501438 -f
+lineage/scripts/repopick/repopick.py 501439 -f
+
 
 rm -rf external/mainline-hw-deps
 
