@@ -30,6 +30,8 @@ vendor/lineage/build/tools/roomservice.py generic true device/mainline/Generic_x
 git clone https://salsa.debian.org/kernel-team/linux --depth=1 -b debian/latest external/debian-linux
 git clone https://android.googlesource.com/kernel/common --depth=1 -b android-mainline kernel/mainline/android-mainline
 
+git clone https://github.com/Pauli1Go/HoolockLinux-linux-firmware --depth=1 ; cp -r HoolockLinux-linux-firmware/makez2fw device/apple/utilities/makez2fw
+
 # patches
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/mesa_patches.sh | bash
 
