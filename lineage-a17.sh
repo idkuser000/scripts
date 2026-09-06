@@ -44,6 +44,7 @@ lineage/scripts/repopick/repopick.py 471111 -f
 lineage/scripts/repopick/repopick.py 471112 -f
 lineage/scripts/repopick/repopick.py 471113 -f
 lineage/scripts/repopick/repopick.py 501163 -f
+lineage/scripts/repopick/repopick.py 501351 -f
 
 rm -rf external/mainline-hw-deps
 
