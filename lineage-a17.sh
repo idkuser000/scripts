@@ -31,6 +31,8 @@ git clone https://salsa.debian.org/kernel-team/linux --depth=1 -b debian/latest 
 git clone https://android.googlesource.com/kernel/common --depth=1 -b android-mainline kernel/mainline/android-mainline
 
 git clone https://github.com/Pauli1Go/HoolockLinux-linux-firmware --depth=1 ; cp -r HoolockLinux-linux-firmware/makez2fw device/apple/snowcastle/utilities/makez2fw
+git clone https://github.com/HoolockLinux/hKernelFWExtractor --depth=1 ; cd hKernelFWExtractor ; git submodule update --init ; cd ..
+git clone https://github.com/corellium/projectsandcastle --depth=1 ; cp -r projectsandcastle/hcdpack device/apple/snowcastle/utilities/hcdpack
 
 # patches
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/mesa_patches.sh | bash
