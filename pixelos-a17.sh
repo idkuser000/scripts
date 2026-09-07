@@ -8,7 +8,6 @@ rm -rf frameworks/base
 rm -rf system/memory/libmeminfo
 rm -rf external/debian-linux
 rm -rf kernel/mainline/android-mainline
-rm -rf system/core
 rm -rf device/mainline/generic
 
 # init & syncing
@@ -32,10 +31,14 @@ curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/script
 
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/other_patches.sh | bash
 
+custom/scripts/repopick/repopick.py -t c2-rgb
+custom/scripts/repopick/repopick.py -t custom-light-disable-backlight
+custom/scripts/repopick/repopick.py -t mainline-kernel
 custom/scripts/repopick/repopick.py 496520 -f
-custom/scripts/repopick/repopick.py 471111 -f
-custom/scripts/repopick/repopick.py 471112 -f
-custom/scripts/repopick/repopick.py 471113 -f
+custom/scripts/repopick/repopick.py 501200 -f
+custom/scripts/repopick/repopick.py 501438 -f
+custom/scripts/repopick/repopick.py 501439 -f
+custom/scripts/repopick/repopick.py 501440 -f
 custom/scripts/repopick/repopick.py 501163 -f
 
 rm -rf external/mainline-hw-deps
@@ -46,9 +49,9 @@ m liveisoimage
 
 # Upload files to gofile
 echo "Upload to gofile will be started..."
-if [ -f out/target/product/Generic_x86_64/*.iso ]; then
+if [ -f out/target/product/Generic_x86_64/PixelOS-*.iso ]; then
     wget https://raw.githubusercontent.com/lordgaruda/GoFile-Upload/refs/heads/master/upload.sh
-    chmod +x upload.sh ; ./upload.sh out/target/product/Generic_x86_64/*.iso
+    chmod +x upload.sh ; ./upload.sh out/target/product/Generic_x86_64/PixelOS-*.iso
     echo "Upload done!"
 else
     echo "No zip found in out/ dir!" 
