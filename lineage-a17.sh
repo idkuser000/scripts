@@ -54,6 +54,22 @@ lineage/scripts/repopick/repopick.py 501432
 lineage/scripts/repopick/repopick.py 501023
 lineage/scripts/repopick/repopick.py 501507
 
+lineage/scripts/repopick/repopick.py 501392
+lineage/scripts/repopick/repopick.py 501393
+lineage/scripts/repopick/repopick.py 501396
+lineage/scripts/repopick/repopick.py 501397
+lineage/scripts/repopick/repopick.py 501398
+lineage/scripts/repopick/repopick.py 501399
+lineage/scripts/repopick/repopick.py 501400
+lineage/scripts/repopick/repopick.py 501401
+lineage/scripts/repopick/repopick.py 501402
+lineage/scripts/repopick/repopick.py 501403
+lineage/scripts/repopick/repopick.py 501404
+lineage/scripts/repopick/repopick.py 501405
+lineage/scripts/repopick/repopick.py 501407
+lineage/scripts/repopick/repopick.py 501408
+lineage/scripts/repopick/repopick.py 501421
+
 rm -rf external/mainline-hw-deps
 
 # build
