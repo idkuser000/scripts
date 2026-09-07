@@ -30,10 +30,6 @@ vendor/lineage/build/tools/roomservice.py generic true device/mainline/Generic_x
 git clone https://salsa.debian.org/kernel-team/linux --depth=1 -b debian/latest external/debian-linux
 git clone https://android.googlesource.com/kernel/common --depth=1 -b android-mainline kernel/mainline/android-mainline
 
-git clone https://github.com/Pauli1Go/HoolockLinux-linux-firmware --depth=1 ; cp -r HoolockLinux-linux-firmware/makez2fw device/apple/snowcastle/utilities/makez2fw
-git clone https://github.com/HoolockLinux/hKernelFWExtractor --depth=1 ; cd hKernelFWExtractor ; git submodule update --init ; cd ..
-git clone https://github.com/corellium/projectsandcastle --depth=1 ; cp -r projectsandcastle/hcdpack device/apple/snowcastle/utilities/hcdpack
-
 # patches
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/mesa_patches.sh | bash
 
@@ -73,6 +69,7 @@ lineage/scripts/repopick/repopick.py 501408
 lineage/scripts/repopick/repopick.py 501421
 
 rm -rf external/mainline-hw-deps
+rm -rf device/apple/snowcastle
 
 # build
 breakfast Generic_x86_64
