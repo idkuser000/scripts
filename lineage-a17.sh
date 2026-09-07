@@ -40,12 +40,19 @@ curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/script
 lineage/scripts/repopick/repopick.py -t c2-rgb
 lineage/scripts/repopick/repopick.py -t lineage-light-disable-backlight
 lineage/scripts/repopick/repopick.py -t mainline-kernel
+
 lineage/scripts/repopick/repopick.py 496520 -f
 lineage/scripts/repopick/repopick.py 501200 -f
 lineage/scripts/repopick/repopick.py 501438 -f
 lineage/scripts/repopick/repopick.py 501439 -f
 lineage/scripts/repopick/repopick.py 501440 -f
 lineage/scripts/repopick/repopick.py 501163 -f
+lineage/scripts/repopick/repopick.py 501506 -f
+
+lineage/scripts/repopick/repopick.py 501390
+lineage/scripts/repopick/repopick.py 501432
+lineage/scripts/repopick/repopick.py 501023
+lineage/scripts/repopick/repopick.py 501507
 
 rm -rf external/mainline-hw-deps
 
