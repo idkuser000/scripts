@@ -30,7 +30,7 @@ vendor/lineage/build/tools/roomservice.py generic true device/mainline/Generic_x
 git clone https://salsa.debian.org/kernel-team/linux --depth=1 -b debian/latest external/debian-linux
 git clone https://android.googlesource.com/kernel/common --depth=1 -b android-mainline kernel/mainline/android-mainline
 
-git clone https://github.com/Pauli1Go/HoolockLinux-linux-firmware --depth=1 ; cp -r HoolockLinux-linux-firmware/makez2fw device/apple/utilities/makez2fw
+git clone https://github.com/Pauli1Go/HoolockLinux-linux-firmware --depth=1 ; cp -r HoolockLinux-linux-firmware/makez2fw device/apple/snowcastle/utilities/makez2fw
 
 # patches
 curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/scripts/mesa_patches.sh | bash
@@ -40,12 +40,12 @@ curl https://raw.githubusercontent.com/idkuser000/scripts/refs/heads/main/script
 lineage/scripts/repopick/repopick.py -t c2-rgb
 lineage/scripts/repopick/repopick.py -t lineage-light-disable-backlight
 lineage/scripts/repopick/repopick.py -t mainline-kernel
-lineage/scripts/repopick/repopick.py 501163 -f
 lineage/scripts/repopick/repopick.py 496520 -f
-lineage/scripts/repopick/repopick.py 501351 -f
+lineage/scripts/repopick/repopick.py 501200 -f
 lineage/scripts/repopick/repopick.py 501438 -f
 lineage/scripts/repopick/repopick.py 501439 -f
-
+lineage/scripts/repopick/repopick.py 501440 -f
+lineage/scripts/repopick/repopick.py 501163 -f
 
 rm -rf external/mainline-hw-deps
 
